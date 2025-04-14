@@ -11,7 +11,9 @@ def home():
 
 @app.route('/find_website', methods=['GET'])
 def find_website():
-    name = request.args.get('company', "Apple Inc.")
+    name = request.args.get('company', "PayPal Europe S.a.r.l. et C")
+    print(name)
+    print(type(name))
     standardized_name = normalize_company_name(name)
 
     # Create empty list to store the urls gathered from binga

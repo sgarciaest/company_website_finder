@@ -39,55 +39,56 @@ def lower_and_manage_special(name):
 
     return name
 
-def load_legal_designations():
-    # Load the JSON file for legal designations for companies
-    with open('./data/raw/company_legal_designations.json', 'r') as file:
-        legal_designations_data = json.load(file)
-    return legal_designations_data
+def load_suffixes():
+    with open('./data/updated_valumia.countries.extra.ld.json', 'r') as file:
+        countries_db = json.load(file)
+    with open('./data/other_suffixes.json', 'r') as file:
+        other_suffixes = json.load(file)
+    all_sufixes = set()
 
-def load_country_names():
-    # Load the JSON file for country names (names both in english and local language of the company) 
-    with open('./data/raw/country_names.json', 'r') as file:
-        country_names_data = json.load(file)
-    return country_names_data
-
-def define_suffixes_re_pattern():
-    # Get all unique legal designations and add to a set
-    all_suffixes = set()
-    legal_designations_data = load_legal_designations()
-    country_names_data = load_country_names()
-    for key, designations in legal_designations_data.items():
-        for designation in designations:
-            designation = lower_and_manage_special(designation)
-            all_suffixes.add(designation)
-
-    # Get all unique country names and add to set with the legal designations
-    for country in country_names_data["countries"]:
-        for country_name in country.values():
-            country_name = lower_and_manage_special(country_name)
-            all_suffixes.add(country_name)
-
-    # Convert the designations into a regex pattern (case insensitive)
-    pattern = r'\b(' + '|'.join(re.escape(term) for term in all_suffixes) + r')\b'
-
-    return pattern
+    for country in countries_db:
+        for ld in country["legal_designations"]:
+            abbreviations = ld["abbreviation"]
+            for abbreviation in abbreviations:
+                abbreviation = lower_and_manage_special(abbreviation)
+                all_sufixes.add(abbreviation)
+    for lang_data in country["native_names"].values():
+        native_name_official = lang_data["official"]
+        native_name_official = lower_and_manage_special(native_name_official)
+        all_sufixes.add(native_name_official)
+        native_name_common = lang_data["common"]
+        native_name_common = lower_and_manage_special(native_name_common)
+        all_sufixes.add(native_name_common)
+    
+    for g in other_suffixes.values():
+        for suffix in g:
+            suffix = lower_and_manage_special(suffix)
+            all_sufixes.add(suffix)
+    
+    return all_sufixes
 
 
 # Function to normalize company names
 def normalize_company_name(name):
+    all_suffixes = load_suffixes()
+
     # Convert to lowercase and remove special characters using function created above
     name = lower_and_manage_special(name)
+    
     # Replace "&"" with "and"
-    name = re.sub(r'[&]', 'and', name)
-    #Load the regex pattern
-    pattern = define_suffixes_re_pattern()
-    # Remove legal designations and other suffixes using the pattern created
-    # Any text after a possible legal designation or suffix is also descarted
-    split_name = re.split(pattern, name, flags=re.IGNORECASE)
-    name = split_name[0].strip()
-    # Remove whitespaces
-    # name = name.replace(" ", "")
+    name = name.replace("&", "and")
+
+    # Tokenizar el nombre en palabras
+    palabras = name.split()
+
+    # Eliminar palabras que sean sufijos legales
+    palabras_filtradas = [word for word in palabras if word not in all_suffixes]
+
+    # Reconstruir el nombre limpio
+    name = " ".join(palabras_filtradas)
+    
     # Eliminar palabras de una sola letra (!?)
     name = ' '.join([word for word in name.split() if len(word) > 1])
+    
     # Return the cleaned name
     return name

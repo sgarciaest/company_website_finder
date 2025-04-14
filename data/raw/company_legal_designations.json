@@ -1,0 +1,634 @@
+{
+    "USA": [
+        "LLC",
+        "Inc.",
+        "Corp.",
+        "LP",
+        "LLP",
+        "PC",
+        "S-Corp",
+        "C-Corp"
+    ],
+    "United Kingdom": [
+        "Ltd",
+        "PLC",
+        "LLP",
+        "CIC"
+    ],
+    "Germany": [
+        "GmbH",
+        "AG",
+        "UG",
+        "OHG",
+        "KG",
+        "GbR",
+        "e.V.",
+        "KGaA",
+        "eG"
+    ],
+    "France": [
+        "SARL",
+        "SAS",
+        "SASU",
+        "SA",
+        "SCI",
+        "EURL",
+        "SNC"
+    ],
+    "Italy": [
+        "Srl",
+        "SpA",
+        "SNC",
+        "SAS",
+        "SS"
+    ],
+    "Spain": [
+        "SL",
+        "SA",
+        "SCP"
+    ],
+    "Netherlands": [
+        "BV",
+        "NV",
+        "VOF",
+        "CV"
+    ],
+    "Sweden": [
+        "AB",
+        "HB",
+        "KB"
+    ],
+    "Denmark": [
+        "ApS",
+        "A/S",
+        "IVS"
+    ],
+    "Finland": [
+        "Oy",
+        "Oyj",
+        "Ky",
+        "Ay"
+    ],
+    "Norway": [
+        "AS",
+        "ASA",
+        "ANS",
+        "DA"
+    ],
+    "Switzerland": [
+        "GmbH",
+        "AG"
+    ],
+    "Austria": [
+        "GmbH",
+        "AG",
+        "OG",
+        "KG"
+    ],
+    "Ireland": [
+        "Ltd",
+        "PLC",
+        "CLG",
+        "DAC"
+    ],
+    "Portugal": [
+        "LDA",
+        "SA"
+    ],
+    "Czech Republic": [
+        "s.r.o.",
+        "a.s.",
+        "v.o.s.",
+        "k.s."
+    ],
+    "Hungary": [
+        "Kft.",
+        "Rt.",
+        "Bt.",
+        "Kkt."
+    ],
+    "Belgium": [
+        "SRL",
+        "SA",
+        "SC",
+        "SPRL"
+    ],
+    "Luxembourg": [
+        "SARL",
+        "SA",
+        "SCA",
+        "SCSP"
+    ],
+    "Greece": [
+        "AE",
+        "EPE",
+        "IKE",
+        "OE",
+        "EE"
+    ],
+    "Poland": [
+        "Sp. z o.o.",
+        "S.A.",
+        "Sp.p.",
+        "Sp.k.", 
+        "Sp.j.",
+        "SKA",
+        "P.P.",
+        "P.H.U.",
+        "Z.O.Z.",  
+        "Działalność gospodarcza"
+    ],
+    "Estonia": [
+        "OU",
+        "AS",
+        "UO"
+    ],
+    "Lithuania": [
+        "UAB",
+        "AB",
+        "MB"
+    ],
+    "Latvia": [
+        "SIA",
+        "AS"
+    ],
+    "Slovakia": [
+        "s.r.o.",
+        "a.s.",
+        "k.s.",
+        "v.o.s."
+    ],
+    "Slovenia": [
+        "d.o.o.",
+        "d.d.",
+        "k.d.",
+        "d.n.o."
+    ],
+    "Romania": [
+        "SRL",
+        "SA",
+        "SNC",
+        "SCS"
+    ],
+    "Bulgaria": [
+        "OOD",
+        "EOOD",
+        "AD",
+        "ET"
+    ],
+    "Croatia": [
+        "d.o.o.",
+        "j.d.o.o.",
+        "d.d.",
+        "k.d."
+    ],
+    "Malta": [
+        "Ltd",
+        "PLC"
+    ],
+    "Cyprus": [
+        "Ltd",
+        "PLC"
+    ],
+    "Bosnia and Herzegovina": [
+        "d.o.o.",
+        "a.d.",
+        "k.d."
+    ],
+    "Serbia": [
+        "d.o.o.",
+        "a.d.",
+        "k.d.",
+        "o.d."
+    ],
+    "Montenegro": [
+        "d.o.o.",
+        "a.d.",
+        "k.d."
+    ],
+    "North Macedonia": [
+        "d.o.o.",
+        "a.d.",
+        "k.d.",
+        "j.t.d."
+    ],
+    "Albania": [
+        "sh.p.k.",
+        "s.a.",
+        "sh.a.",
+        "k.p."
+    ],
+    "Ukraine": [
+        "LLC",
+        "JSC",
+        "PJSC",
+        "PE",
+        "LLP"
+    ],
+    "Russia": [
+        "OOO",
+        "AO",
+        "PAO",
+        "IP"
+    ],
+    "Belarus": [
+        "OOO",
+        "ZAO",
+        "OAO",
+        "IP"
+    ],
+    "Kazakhstan": [
+        "TOO",
+        "AO",
+        "KHP"
+    ],
+    "Turkey": [
+        "AS",
+        "Ltd. Şti.",
+        "KO",
+        "Kom."
+    ],
+    "Iceland": [
+        "ehf.",
+        "hf.",
+        "sf.",
+        "ses."
+    ],
+    "Liechtenstein": [
+        "AG",
+        "GmbH",
+        "Anstalt",
+        "Stiftung"
+    ],
+    "Monaco": [
+        "SARL",
+        "SAM",
+        "SNC",
+        "SCS"
+    ],
+    "Andorra": [
+        "SL",
+        "SA",
+        "SLU"
+    ],
+    "San Marino": [
+        "SPA",
+        "SRL",
+        "SS"
+    ],
+    "Kosovo": [
+        "Sh.p.k.",
+        "S.A.",
+        "SHPK",
+        "SNK"
+    ],
+    "Canada": [
+        "Ltd.",
+        "Inc.",
+        "Corp.",
+        "ULC",
+        "LLP",
+        "GP"
+    ],
+    "Mexico": [
+        "S.A.",
+        "S.A. de C.V.",
+        "S. de R.L.",
+        "S. de R.L. de C.V.",
+        "S.C.",
+        "S.C.S.",
+        "S.A.P.I.",
+        "S.N.C."
+    ],
+    "Brazil": [
+        "LTDA",
+        "S.A.",
+        "EIRELI",
+        "ME",
+        "EI",
+        "SCP",
+        "Sociedade Simples"
+    ],
+    "Argentina": [
+        "S.A.",
+        "S.A.S.",
+        "S.R.L.",
+        "S.C.",
+        "S.C.S."
+    ],
+    "Chile": [
+        "S.A.",
+        "SpA",
+        "EIRL",
+        "LTDA",
+        "Comandita Simple"
+    ],
+    "Colombia": [
+        "S.A.",
+        "S.A.S.",
+        "LTDA",
+        "S.C.",
+        "S.C.A."
+    ],
+    "Peru": [
+        "S.A.",
+        "S.A.C.",
+        "E.I.R.L.",
+        "S.C.",
+        "S.C.S."
+    ],
+    "Ecuador": [
+        "Cía. Ltda.",
+        "S.A.",
+        "S.A.S.",
+        "E.P.",
+        "S.C."
+    ],
+    "Uruguay": [
+        "S.A.",
+        "S.R.L.",
+        "S.C.",
+        "S.A.S.",
+        "S.C.S."
+    ],
+    "Paraguay": [
+        "S.A.",
+        "S.R.L.",
+        "S.C.",
+        "S.C.S.",
+        "S.A.S."
+    ],
+    "Bolivia": [
+        "S.A.",
+        "S.R.L.",
+        "S.C.",
+        "S.C.S."
+    ],
+    "Venezuela": [
+        "S.A.",
+        "S.R.L.",
+        "C.A.",
+        "S.C.",
+        "S.N.C."
+    ],
+    "Cuba": [
+        "S.A.",
+        "S.R.L."
+    ],
+    "Puerto Rico": [
+        "LLC",
+        "Corp.",
+        "Inc.",
+        "P.S.C."
+    ],
+    "Costa Rica": [
+        "S.A.",
+        "S.R.L.",
+        "S.C.",
+        "E.I.R.L."
+    ],
+    "Panama": [
+        "S.A.",
+        "S.R.L.",
+        "S.C."
+    ],
+    "Honduras": [
+        "S.A.",
+        "S. de R.L.",
+        "S. en C."
+    ],
+    "Guatemala": [
+        "S.A.",
+        "S.R.L.",
+        "S.C."
+    ],
+    "El Salvador": [
+        "S.A. de C.V.",
+        "S. de R.L.",
+        "S.C."
+    ],
+    "Nicaragua": [
+        "S.A.",
+        "S.R.L.",
+        "Cia. Ltda."
+    ],
+    "Dominican Republic": [
+        "S.A.",
+        "S.R.L.",
+        "S.A.S.",
+        "E.I.R.L."
+    ],
+    "European Union": [
+        "SE",
+        "SCE",
+        "EEIG",
+        "EGTC",
+        "SUP"
+    ],
+    "Misc": [
+        "Incorporated",
+        "Company",
+        "Co.",
+        "Limited",
+        "Private",
+        "Pte.",
+        "Group",
+        "Partners",
+        "Partnership",
+        "Firm",
+        "Associates",
+        "Association",
+        "Holdings",
+        "Investment",
+        "Ventures",
+        "Enterprise",
+        "Enterprises",
+        "Industries",
+        "International",
+        "Global",
+        "Networks",
+        "Solutions",
+        "Systems",
+        "Technologies",
+        "Tech",
+        "Development",
+        "Services",
+        "Resources",
+        "Consulting",
+        "Consultants",
+        "Agency",
+        "Agencies",
+        "Studios",
+        "Works",
+        "Creations",
+        "Management",
+        "Operations",
+        "Manufacturing",
+        "Fabrication",
+        "Engineering",
+        "Logistics",
+        "Distributions",
+        "Marketing",
+        "Communications",
+        "Media",
+        "Publishing",
+        "Design",
+        "Innovation",
+        "Creative",
+        "Builders",
+        "Construction",
+        "Architecture",
+        "Healthcare",
+        "Pharma",
+        "Biotech",
+        "Real Estate",
+        "Property",
+        "Properties",
+        "Retail",
+        "Wholesale",
+        "Suppliers",
+        "Trading",
+        "Import",
+        "Export",
+        "Exports",
+        "Commodities",
+        "Provisions",
+        "Food",
+        "Beverages",
+        "Drinks",
+        "Restaurants",
+        "Hotels",
+        "Hospitality",
+        "Travel",
+        "Tours",
+        "Transportation",
+        "Aviation",
+        "Automotive",
+        "Marine",
+        "Energy",
+        "Renewables",
+        "Oil & Gas",
+        "Chemicals",
+        "Plastics",
+        "Metals",
+        "Mining",
+        "Electronics",
+        "Software",
+        "Hardware",
+        "AI",
+        "Cloud",
+        "Robotics",
+        "FinTech",
+        "Banking",
+        "Finance",
+        "Capital",
+        "Funds",
+        "Wealth",
+        "Insurance",
+        "Security",
+        "Legal",
+        "Law",
+        "Attorneys",
+        "Advocates",
+        "Chambers",
+        "Accounting",
+        "Audit",
+        "Tax",
+        "Education",
+        "Academy",
+        "School",
+        "University",
+        "Institute",
+        "Foundation",
+        "Charity",
+        "Nonprofit",
+        "Organization",
+        "Club",
+        "Society",
+        "Federation",
+        "Union",
+        "Council",
+        "Committee",
+        "Online",
+        "SE",
+        "Bank",
+        "Brands",
+        "Payments"
+    ],
+    "Geographical Suffixes": [
+        "EMEA",
+        "LATAM",
+        "APAC",
+        "NA",
+        "SA",
+        "EU",
+        "MEA",
+        "CEE",
+        "SEA",
+        "ANZ",
+        "DACH",
+        "CIS",
+        "MENA",
+        "ASEAN",
+        "AMER",
+        "EEA",
+        "EFTA",
+        "APJ",
+        "BRIC",
+        "GCC",
+        "NORDICS",
+        "BENELUX",
+        "BALTICS",
+        "CARICOM",
+        "OECS",
+        "OCEANIA",
+        "EAS",
+        "WAS",
+        "AFRICA",
+        "NAM",
+        "SAM",
+        "LATAC",
+        "LAC",
+        "EMEAI",
+        "EUROPE",
+        "APMEA",
+        "EURASIA",
+        "MALZAC",
+        "PACRIM",
+        "NAFTA",
+        "SADC",
+        "ECOWAS",
+        "COMESA",
+        "AU",
+        "SCA",
+        "CALA",
+        "AMZ",
+        "ROW",
+        "INDO-PACIFIC",
+        "WEU",
+        "NEU",
+        "SWE",
+        "SEE",
+        "SOUTHERN AFRICA",
+        "CENTRAL ASIA",
+        "EASTERN EUROPE",
+        "WEST AFRICA",
+        "EAST AFRICA",
+        "SOUTH ASIA",
+        "NORTH ASIA",
+        "CARIBBEAN",
+        "PACIFIC",
+        "INDIA",
+        "SUB-SAHARAN AFRICA",
+        "GULF STATES",
+        "ARAB WORLD",
+        "SCANDINAVIA",
+        "IBERIA",
+        "MAGHREB",
+        "LEVANT",
+        "BALKANS",
+        "HIMALAYAN REGION",
+        "INDUS VALLEY"
+    ]
+}
+

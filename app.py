@@ -1,60 +1,81 @@
 from flask import Flask, request, jsonify
 from standardize_functions import normalize_company_name
 from domain_functions import get_main_page, check_domain_for_company, bing_search
-
+import logging
 
 app = Flask(__name__)
+logging.basicConfig(level=logging.INFO)
 
 @app.route('/')
 def home():
-    return "Use /find_website endpoint"
+    return "Use the /find_website endpoint. Example: /find_website?company=Apple Inc."
 
 @app.route('/find_website', methods=['GET'])
 def find_website():
-    name = request.args.get('company', "PayPal Europe S.a.r.l. et C")
-    print(name)
-    print(type(name))
-    standardized_name = normalize_company_name(name)
+    try:
+        name = request.args.get('company', "PayPal Europe S.a.r.l. et C")
 
-    # Create empty list to store the urls gathered from binga
-    urls = []
 
-    for url in bing_search(f"{name} website"):
-    # for url in search(f"{name} website", num_results=3):
-        urls.append(url)
+        if not name:
+            return jsonify({"error": "Missing required query parameter: 'company'"}), 400
 
-    preferred_tld = [".com", ".org", ".net", ".edu", ".gov"]
-    preferred_domain = 0
+        standardized_name = normalize_company_name(name)
 
-    valid_domains = list(set([get_main_page(url) for url in urls if check_domain_for_company(standardized_name, url)]))
+        urls = bing_search(f"{name} website")
 
-    # For each possible case with valid domains(no valid domains found, one valid domain found and multiple valid domains found), print a message and save the valid domains and state to the output df
-    if len(valid_domains) == 0:
-        # No valid domain found
-        return jsonify({'company': name, 'standardized_name': standardized_name, "website(s)": "No website found"})
-        
-    elif len(valid_domains) == 1:
-        # Only one valid domain found
-        return jsonify({'company': name, 'standardized_name': standardized_name, "website(s)": [valid_domains[0]]})
+        preferred_tld = [".com", ".org", ".net", ".edu", ".gov"]
+        preferred_domain = None
 
-    else:
-        # Multiple valid domains found
-        unique_valid_domains = list(set(valid_domains))  # Remove duplicates, keeping only unique values
-        for i, domain in enumerate(unique_valid_domains, 1):  # Enumerate unique domains
-            if any(tld in domain for tld in preferred_tld):
-                preferred_domain = domain
-        
-        # If a preferred domain TLD is found, it is put first
-        if preferred_domain == 0:
-            supplier["data"]["domain"] = unique_valid_domains
-            supplier["data"]["domain_status"] = "multiple_matches"
-            return jsonify({'company': name, 'standardized_name': standardized_name, "website(s)": unique_valid_domains})
+        valid_domains = list(set([
+            get_main_page(url)
+            for url in urls
+            if check_domain_for_company(standardized_name, url)
+        ]))
+
+        if not valid_domains:
+            return jsonify({
+                'company': name,
+                'standardized_name': standardized_name,
+                'status': 'no_matches',
+                'website(s)': []
+            })
+
+        elif len(valid_domains) == 1:
+            return jsonify({
+                'company': name,
+                'standardized_name': standardized_name,
+                'status': 'valid_domain',
+                'website(s)': [valid_domains[0]]
+            })
 
         else:
-            index_preferred_domain = unique_valid_domains.index(preferred_domain)
-            unique_valid_domains = [preferred_domain] + unique_valid_domains[:index_preferred_domain] + unique_valid_domains[index_preferred_domain + 1:]
-            return jsonify({'company': name, 'standardized_name': standardized_name, "website(s)": unique_valid_domains})
+            # Multiple domains found
+            unique_valid_domains = list(set(valid_domains))
 
+            for domain in unique_valid_domains:
+                if any(tld in domain for tld in preferred_tld):
+                    preferred_domain = domain
+                    break
+
+            if preferred_domain:
+                unique_valid_domains.remove(preferred_domain)
+                ordered_domains = [preferred_domain] + unique_valid_domains
+            else:
+                ordered_domains = unique_valid_domains
+
+            return jsonify({
+                'company': name,
+                'standardized_name': standardized_name,
+                'status': 'multiple_matches',
+                'website(s)': ordered_domains
+            })
+
+    except Exception as e:
+        app.logger.exception("Unhandled error in /find_website")
+        return jsonify({
+            "error": "Internal server error",
+            "details": str(e)
+        }), 500
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

@@ -1,9 +1,6 @@
 import re
 import json
-import pycountry
-import hashlib
-import string
-import csv
+
 
 # Normalizes a string by replacing accented characters, converting to lowercase, removing special characters, and ensuring consistent whitespace.
 def lower_and_manage_special(name):
@@ -40,9 +37,9 @@ def lower_and_manage_special(name):
     return name
 
 def load_suffixes():
-    with open('./data/updated_valumia.countries.extra.ld.json', 'r') as file:
+    with open('data/updated_valumia.countries.extra.ld.json', 'r') as file:
         countries_db = json.load(file)
-    with open('./data/other_suffixes.json', 'r') as file:
+    with open('data/other_suffixes.json', 'r') as file:
         other_suffixes = json.load(file)
     all_sufixes = set()
 

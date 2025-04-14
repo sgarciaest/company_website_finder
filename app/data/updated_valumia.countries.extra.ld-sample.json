@@ -1,0 +1,184 @@
+[
+    {
+        "_id": {
+            "$oid": "663ad0ee32d81cf1484b942a"
+        },
+        "name": "Afghanistan",
+        "code": "AF",
+        "native_names": {
+            "prs": {
+                "official": "جمهوری اسلامی افغانستان",
+                "common": "افغانستان"
+            },
+            "pus": {
+                "official": "د افغانستان اسلامي جمهوریت",
+                "common": "افغانستان"
+            },
+            "tuk": {
+                "official": "Owganystan Yslam Respublikasy",
+                "common": "Owganystan"
+            }
+        },
+        "tld": [
+            ".af"
+        ],
+        "legal_designations": []
+    },
+    {
+        "_id": {
+            "$oid": "663ad0ee32d81cf1484b942b"
+        },
+        "name": "Åland Islands",
+        "code": "AX",
+        "native_names": {
+            "swe": {
+                "official": "Landskapet Åland",
+                "common": "Åland"
+            }
+        },
+        "tld": [
+            ".ax"
+        ],
+        "legal_designations": []
+    },
+    {
+        "_id": {
+            "$oid": "663ad0ee32d81cf1484b942c"
+        },
+        "name": "Albania",
+        "code": "AL",
+        "native_names": {
+            "sqi": {
+                "official": "Republika e Shqipërisë",
+                "common": "Shqipëria"
+            }
+        },
+        "tld": [
+            ".al"
+        ],
+        "legal_designations": []
+    },
+    {
+        "_id": {
+            "$oid": "663ad0ee32d81cf1484b942d"
+        },
+        "name": "Algeria",
+        "code": "DZ",
+        "native_names": {
+            "ara": {
+                "official": "الجمهورية الديمقراطية الشعبية الجزائرية",
+                "common": "الجزائر"
+            }
+        },
+        "tld": [
+            ".dz",
+            "الجزائر."
+        ],
+        "legal_designations": []
+    },
+    {
+        "_id": {
+            "$oid": "663ad0ee32d81cf1484b942e"
+        },
+        "name": "American Samoa",
+        "code": "AS",
+        "native_names": {
+            "eng": {
+                "official": "American Samoa",
+                "common": "American Samoa"
+            },
+            "smo": {
+                "official": "Sāmoa Amelika",
+                "common": "Sāmoa Amelika"
+            }
+        },
+        "tld": [
+            ".as"
+        ],
+        "legal_designations": []
+    },
+    {
+        "_id": {
+            "$oid": "663ad0ee32d81cf1484b942f"
+        },
+        "name": "Andorra",
+        "code": "AD",
+        "native_names": {
+            "cat": {
+                "official": "Principat d'Andorra",
+                "common": "Andorra"
+            }
+        },
+        "tld": [
+            ".ad"
+        ],
+        "legal_designations": []
+    },
+    {
+        "_id": {
+            "$oid": "663ad0ee32d81cf1484b9430"
+        },
+        "name": "Angola",
+        "code": "AO",
+        "native_names": {
+            "por": {
+                "official": "República de Angola",
+                "common": "Angola"
+            }
+        },
+        "tld": [
+            ".ao"
+        ],
+        "legal_designations": []
+    },
+    {
+        "_id": {
+            "$oid": "663ad0ee32d81cf1484b9431"
+        },
+        "name": "Anguilla",
+        "code": "AI",
+        "native_names": {
+            "eng": {
+                "official": "Anguilla",
+                "common": "Anguilla"
+            }
+        },
+        "tld": [
+            ".ai"
+        ],
+        "legal_designations": []
+    },
+    {
+        "_id": {
+            "$oid": "663ad0ee32d81cf1484b9432"
+        },
+        "name": "Antarctica",
+        "code": "AQ",
+        "native_names": {
+            "unknown": {
+                "official": "Desconocido",
+                "common": "Desconocido"
+            }
+        },
+        "tld": [
+            ".aq"
+        ],
+        "legal_designations": []
+    },
+    {
+        "_id": {
+            "$oid": "663ad0ee32d81cf1484b9433"
+        },
+        "name": "Antigua and Barbuda",
+        "code": "AG",
+        "native_names": {
+            "eng": {
+                "official": "Antigua and Barbuda",
+                "common": "Antigua and Barbuda"
+            }
+        },
+        "tld": [
+            ".ag"
+        ]
+    }
+]

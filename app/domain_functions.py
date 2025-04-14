@@ -1,9 +1,13 @@
 import re
 import tldextract
 from urllib.parse import urlparse
-import csv
 import requests
 from bs4 import BeautifulSoup
+from googlesearch import search
+
+def google_search(query, max_results=10):
+    return list(search(query, num_results=max_results))
+
 
 # Function to scrape search results from bing, using requests and BeautifulSoup
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"}

@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from standardize_functions import normalize_company_name
-from domain_functions import get_main_page, check_domain_for_company, bing_search
+from domain_functions import get_main_page, check_domain_for_company, google_search
 import logging
 
 app = Flask(__name__)
@@ -13,7 +13,7 @@ def home():
 @app.route('/find_website', methods=['GET'])
 def find_website():
     try:
-        name = request.args.get('company', "PayPal Europe S.a.r.l. et C")
+        name = request.args.get('company')
 
 
         if not name:
@@ -21,7 +21,7 @@ def find_website():
 
         standardized_name = normalize_company_name(name)
 
-        urls = bing_search(f"{name} website")
+        urls = google_search(f"{name} website")
 
         preferred_tld = [".com", ".org", ".net", ".edu", ".gov"]
         preferred_domain = None
